@@ -35,8 +35,8 @@ body {
 
 .container-box {
   position: relative;
-  height: auto;
-  width: auto;
+  height: 65%;
+  width: 55%;
   padding: 30px;
   display: flex;
   flex-direction: column;
