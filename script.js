@@ -31,12 +31,12 @@ async function getBalance() {
     if (result.success === false || result.status === 500) {
       alertBox.innerHTML = `<strong>ERROR: </strong>${result.message}`;
       alertBox.style.display = "block";
-      alertBox.style.backgroundColor = "#ff8300";
+      alertBox.style.backgroundColor = "#ff8300"; // Amber color
       setTimeout(closeAlert, 3000);
     } else if (result.message.data.length === 0) {
       alertBox.innerHTML = "<strong>ERROR: </strong> Member number invalid.";
       alertBox.style.display = "block";
-      alertBox.style.backgroundColor = "#0e86d4";
+      alertBox.style.backgroundColor = "#0e86d4"; // Blue color
       balHeading.innerHTML = "";
       setTimeout(closeAlert, 3000);
     } else {
@@ -45,7 +45,7 @@ async function getBalance() {
   } catch (error) {
     alertBox.innerHTML = "<strong>ERROR: </strong> Backend service error.";
     alertBox.style.display = "block";
-    alertBox.style.backgroundColor = "#ff000a";
+    alertBox.style.backgroundColor = "#ff000a"; // Red color
     balHeading.innerHTML = "";
     setTimeout(closeAlert, 3000);
     console.log(error);
@@ -56,7 +56,7 @@ async function renderView(result) {
   const message = result.message;
   const data = message.data;
 
-  var totalBalance = 0; // Get total constributions
+  var totalBalance = 0; // Get total contributions
   for (let i = 0; i < data.length; i++) {
     totalBalance += Math.floor(parseInt(data[i].AMOUNT));
   }
@@ -74,7 +74,8 @@ async function renderView(result) {
     uniqueEmployers.set(contrib.EMPLOYER_ID, contrib.EMPNAME);
   });
 
-  headingOne.innerHTML = "Total NSSF Balance"; // Render the view
+  // Actual view
+  headingOne.innerHTML = "Total NSSF Balance";
   headingTwo.innerHTML = `Member Number: ${memberInput.value}`;
   balHeading.innerHTML = `${totalBalance.toLocaleString()} Shs.`;
   empNumber.innerHTML = `Number of Employers: ${uniqueEmployerCount}`;
