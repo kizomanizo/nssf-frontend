@@ -9,8 +9,8 @@ const balHeading = document.getElementById("balHeading");
 const empNumber = document.getElementById("empNumber");
 const rightContent = document.getElementById("right-content");
 
+// Clear headings and empNumber then add Loading... placeholder
 checkBalance.onclick = function () {
-  // Clear headings and empNumber
   headingOne.innerHTML = "";
   headingTwo.innerHTML = "";
   empNumber.innerHTML = "";
@@ -31,16 +31,23 @@ async function getBalance() {
     if (result.success === false || result.status === 500) {
       alertBox.innerHTML = `<strong>ERROR: </strong>${result.message}`;
       alertBox.style.display = "block";
+      alertBox.style.backgroundColor = "#ff8300";
       setTimeout(closeAlert, 3000);
     } else if (result.message.data.length === 0) {
       alertBox.innerHTML = "<strong>ERROR: </strong> Member number invalid.";
       alertBox.style.display = "block";
+      alertBox.style.backgroundColor = "#0e86d4";
       balHeading.innerHTML = "";
       setTimeout(closeAlert, 3000);
     } else {
       return renderView(result);
     }
   } catch (error) {
+    alertBox.innerHTML = "<strong>ERROR: </strong> Backend service error.";
+    alertBox.style.display = "block";
+    alertBox.style.backgroundColor = "#ff000a";
+    balHeading.innerHTML = "";
+    setTimeout(closeAlert, 3000);
     console.log(error);
   }
 }
