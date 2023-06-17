@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>NSSF Balance</title>
+</head>
+
+<body>
+  <div class="alert" id="alert">
+    <strong>Alert! </strong><span class alert-message>No records found.</span>
+  </div>
+  <div class="container">
+    <div class="container-box">
+      <div class="container-request">
+        <input type="text" name="member_id" id="member_id" class="member_id">
+        <input type="submit" name="check_balance" id="check_balance" class="check_balance" value="Check Balance">
+      </div>
+      <div class="container-response">
+        <div class="response-left" id="balanceArea">
+          <h3 class="dark" id="headingOne"></h3>
+          <h3 class="light" id="headingTwo"></h3>
+          <h2 class="member-balance" id="balHeading"></h2>
+        </div>
+        <div class="response-right">
+          <div class="right-title" id="empNumber"></div>
+          <div class="right-content" id="right-content">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>Designed by Kizito Mrema <a class="footer-link" href="http://twitter.com/kizomanizo">@kizomanizo</a></p>
+  </footer>
+</body>
+<script src="script.js"></script>
+
+</html>
