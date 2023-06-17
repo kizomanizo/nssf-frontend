@@ -1,7 +1,7 @@
 /* @Author: Kizito - kizomanizo@gmail(dot)com */
 const memberInput = document.getElementById("member_id");
 const checkBalance = document.getElementById("check_balance");
-const backEnd = "http://localhost:3001/nssf/";
+const backEnd = "http://tankeys.com:3001/nssf/";
 const alertBox = document.getElementById("alert");
 const headingOne = document.getElementById("headingOne");
 const headingTwo = document.getElementById("headingTwo");
